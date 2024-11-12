@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luas dan Keliling Persegi</title>
+  <style>
+    *{
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .card{
+      width: 40%;
+      background-color: rgb(23, 197, 87);
+      box-shadow: 0 5px 5px 0 rgb(red, green, blue);
+      transition: 0,3s;
+    }
+    .cardbody{
+      padding: 2px 16px
+    }
+
+    .tengah{
+      display: flex;
+      justify-content: center;
+    }
+    .cardfooter{
+      padding: 8px;
+      background-color: black;
+      display: flex; justify-content: right;
+    }
+    #txHasil{
+      font-size: 20px;
+    }
+    label{
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input[type=text]{
+      width: 95%;
+      padding: 2px;
+      margin: 8px;
+    }
+    button{
+      border: 3px;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: chartreuse;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tengah">
+    <div class="card">
+
+    <div class="cardbody">
+  <h1 id="txhasil"> Bangun Ruang Persegi</h1>
+  <form>
+    <label>Nilai Panjang (meter)</label>
+    <input type="text" name="txPanjang" id="txPanjang">
+    <label>Nilai Lebar (meter)</label>
+    <input type="text" name="txLebar" id="txLebar">
+  </form>
+<div id="txHasil"> Nilai Luas dan Keliling</div>
+</div>
+<div class="cardfooter">
+  <button onclick="hitung()">Hitung Luas Dan Keliling persegi</button>
+</div>
+</div>
+</div>
+
+<script>
+  function hitung(){
+    //alert("Belajar JavaScript")
+    let Panjang= document.getElementById("txPanjang").value
+    let Lebar= document.getElementById("txLebar").value
+
+    //Proses Hitung Luas
+    let Luas= Panjang*Lebar
+    let PJLB= Number(Panjang)+Number(Lebar)
+    let KLL= 2*(PJLB)
+    let hsl= "Hitung Luas Persegi<br> = Panjang x Lebar<br>"
+    hsl+= "Luas= "+Panjang+"m x "+Lebar+"m <br>"
+    hsl+= "Luas= "+Luas+"m <sup>2</sup><br>"
+    hsl+= "Hitung Keliling Persegi<br>"
+    hsl+= "Kel= 2 x (Panjang+Lebar)<br>"
+    hsl+= "Kel= 2 x ("+Panjang+"m + "+Lebar+"m)<br>"
+    hsl+= "Kel= 2 x "+PJLB+"m<br>"
+    hsl+= "Kel= "+KLL+"m"
+
+document.getElementById("txhasil").innerHTML=hsl
+  }
+</script>
+</body>
+</html>
